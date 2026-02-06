@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Happenings</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .progress {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .choice {
+            display: block;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .choice:hover {
+            background: #eef2ff;
+        }
+
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #2f5dff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background: #aaa;
+        }
+
+        .error {
+            color: red;
+            display: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container" id="app">
+    <div class="progress" id="progress"></div>
+    <h1 id="question"></h1>
+
+    <form id="choices"></form>
+
+    <div class="error" id="error">Please select an answer.</div>
+
+    <button id="nextBtn">Next</button>
+</div>
+
+<script src="JavaScript.js"></script>
+</body>
+</html>
+<script src="company-happenings.js"></script>
