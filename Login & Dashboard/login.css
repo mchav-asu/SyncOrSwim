@@ -1,0 +1,45 @@
+body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #D3D3D3;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Login {
+            background-color: #035272;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #FF9B51;
+            padding: 30px 33px 30px 30px;
+            width: 800px;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            font-size: 20px;
+        }
+
+        input, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 20px 0px 10px 10px;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 102%;
+            background-color: #FF9B51;
+            font-size: larger;
+            color: white;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        #error {
+            color: red;
+            margin-top: 10px;
+        }

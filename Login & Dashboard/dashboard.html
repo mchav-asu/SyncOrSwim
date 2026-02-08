@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class="topbar">
+        <h1>Admin Dashboard</h1>
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="layout">
+        <div class="panel">
+            <h2>Add Questions</h2>
+            <label id="qWord">Questions</label>
+            <textarea id="questionInput" placeholder="Enter Survey Question...."></textarea>
+            <button class="addQuestionButton" onclick="addQuestion()">Add Question</button>
+            <button class="reset" onclick="reset()">Reset</button>
+            <div id="statusMessage"></div>
+        </div>
+
+        <div class="questions">
+            <h2>Survey Questions</h2>
+            <div id="questionList"></div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
