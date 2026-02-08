@@ -9,6 +9,6 @@ function login() {
         localStorage.setItem("isLoggedIn", "true")
         window.location.href = "dashboard.html";
     } else {
-        document.getElementById("error").innerText = "Invalid credentils";
+        document.getElementById("error").innerText = "Invalid credentials";
     }
 }
