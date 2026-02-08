@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Feedback</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #D3D3D3;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .container {
+            background: #035272;
+            color: #FF9B51;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: white;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .yes-btn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .no-btn {
+            background: #d7623d;
+            color: white;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            color: white;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Feedback</h1>
+        <p>Do you have time to provide feedback questions about your work experience?</p>
+
+        <div class="buttons" id="buttons">
+            <button class="yes-btn" onclick="answerYes()">Yes</button>
+            <button class="no-btn" onclick="answerNo()">No</button>
+        </div>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        function answerYes() {
+            document.getElementById("buttons").style.display = "none";
+            var msg = document.getElementById("message");
+            msg.style.display = "block";
+            msg.textContent = "Great! Redirecting you to the survey...";
+            setTimeout(function() {
+                window.location.href = "/project/company-happenings.html";
+            }, 1500);
+        }
+
+        function answerNo() {
+            document.getElementById("buttons").style.display = "none";
+            var msg = document.getElementById("message");
+            msg.style.display = "block";
+            msg.textContent = "We will ask again in one month. Thank you!";
+            setTimeout(function() {
+                window.location.href = "/home";
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

@@ -13,6 +13,10 @@ app.use('/login', express.static(path.join(__dirname, 'Login & Dashboard')));
 app.use('/project', express.static(path.join(__dirname, 'ProjectTemplate')));
 
 app.get('/', (req, res) => {
+  res.redirect('/project/survey-prompt.html');
+});
+
+app.get('/home', (req, res) => {
   res.send(`<!DOCTYPE html>
 <html lang="en">
 <head>
