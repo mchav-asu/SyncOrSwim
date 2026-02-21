@@ -4,6 +4,24 @@ body {
   margin: 0;
 }
 
+.Login {
+  width: 500px;
+  margin: 60px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.Login input,
+.Login button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
 .app-container {
   width: 500px;
   margin: 60px auto;
