@@ -43,3 +43,35 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+
+/* DashBoard Styles */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.layout {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.panel, .questions {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 8px;
+}
