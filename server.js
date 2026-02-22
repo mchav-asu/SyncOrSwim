@@ -1,8 +1,10 @@
 const express = require('express');
 const path = require('path');
-
+const fs = require('fs');
+const open = require('open');
 const app = express();
 const PORT = 5000;
+app.use(express.json());
 
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -78,6 +80,36 @@ app.get('/home', (req, res) => {
 </html>`);
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log('Server running on port ' + PORT);
+const DATA_PATH = path.join(__dirname, 'questions', 'questions.json');
+
+// Get Current Questions
+app.get('/api/questions',( req, res) => {
+  try {
+    const raw = fs.readFileSync(DATA_PATH, 'utf-8');
+    res.json(JSON.parse(raw));
+  } catch (err) {
+    res.status(500).json({error: 'Failed to read questions.json'});
+  }
 });
+
+// Save Questions
+app.post('/api/questions', (req, res) => {
+  const {questions} = req.body;
+
+  if (!Array.isArray(questions) || questions.some(q => typeof q !== 'string')) {
+    return res.status(400).json({error: 'Questions must be an Array of Strings'});
+  }
+
+  try  {
+    fs.writeFileSync(DATA_PATH, JSON.stringify({questions}, null, 2), 'utf-8')
+    res.json({ok:true});
+  } catch (err) {
+    res.status(500).json({error: 'Failed to write questions.json'});
+  }
+});
+
+app.listen(PORT, '0.0.0.0', async () => {
+  console.log('Server running on port ' + PORT);
+  console.log(`Open: http://localhost:${PORT}/login/login.html`)
+  }
+);

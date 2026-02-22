@@ -6,6 +6,20 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^5.2.1"
-  }
+    "express": "^5.2.1",
+    "open": "^11.0.0"
+  },
+  "description": "copy this code into your own repository, and use it for your project as you see fit!",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mchav-asu/SyncOrSwim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mchav-asu/SyncOrSwim/issues"
+  },
+  "homepage": "https://github.com/mchav-asu/SyncOrSwim#readme"
 }
