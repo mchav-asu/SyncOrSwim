@@ -10,6 +10,34 @@ const questionList = document.getElementById("questionList")
 const questionInput = document.getElementById("questionInput")
 const statusMessage = document.getElementById("statusMessage")
 
+async function loadQuestions() {
+    try {
+        const res = await fetch("/api/questions")
+        if (!res.ok) throw new Error("Failed to load")
+        const data = await res.json()
+
+        if (data && Array.isArray(data.questions)) {
+            questions = data.questions
+        } else {
+            questions = [...default_questions]
+        }
+    } catch (err) {
+        questions = [...default_questions]
+    }
+}
+
+async function saveQuestions() {
+    const res = await fetch("/api/questions", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({questions})
+    })
+
+    if (!res.ok) {
+        throw new Error("Failed to save")
+    }
+}
+
 function renderQuestions() {
     questionList.innerHTML = ""
 
@@ -24,7 +52,7 @@ function renderQuestions() {
     })
 }
 
-function addQuestion() {
+async function addQuestion() {
     const text = questionInput.value.trim()
     if (text == "") {
         statusMessage.textContent = "Error, please type a question to continue..."
@@ -36,16 +64,29 @@ function addQuestion() {
     questionInput.value = ""
     renderQuestions()
 
-    statusMessage.textContent = "Question Added Successfully!"
-    statusMessage.className = "success"
+    try {
+        await saveQuestions()
+        statusMessage.textContent = "Question Added Successfully!"
+        statusMessage.className = "success"
+    } catch (err) {
+        statusMessage.textContent = "Error Saving"
+        statusMessage.className = "error"
+    }
 }
 
-function deleteQuestion(index) {
+async function deleteQuestion(index) {
     questions.splice(index, 1)
     renderQuestions()
 
-    statusMessage.textContent = "Question Deleted!"
-    statusMessage.className = "del"
+    try {
+        await saveQuestions()
+        statusMessage.textContent = "Question Deleted!"
+        statusMessage.className = "del"
+    } catch (err) {
+        statusMessage.textContent = "Error Deleting Questions!"
+        statusMessage.className = "error"
+    }
+    
 }
 
 function logout() {
@@ -53,12 +94,21 @@ function logout() {
     window.location.href = "login.html"
 }
 
-function reset() {
+async function reset() {
     questions = [...default_questions]
     renderQuestions()
 
-    statusMessage.textContent = "Survey Questions Reset Successfully!"
-    statusMessage.className = "success"
+    try {
+        await saveQuestions()
+        statusMessage.textContent = "Survey Questions Reset Successfully!"
+        statusMessage.className = "success"
+    } catch (err) {
+        statusMessage.textContent = "Error Reseting Questions"
+        statusMessage.className = "error"
+    }
 }
 
-renderQuestions()
+(async function init() {
+    await loadQuestions()
+    renderQuestions()
+})();
