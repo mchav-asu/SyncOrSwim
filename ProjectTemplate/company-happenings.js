@@ -69,10 +69,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 function showCompletion() {
-    document.getElementById("app").innerHTML = `
-        <h1>Thank you!</h1>
-        <p>You have completed the Company Happenings check-in.</p>
-    `;
+    window.location.href = "/project/thank-you.html";
 }
 
 renderQuestion();
