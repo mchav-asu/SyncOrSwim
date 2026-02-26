@@ -75,7 +75,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 function showCompletion() {
-    window.location.href = "/project/thank-you.html";
+    window.location.href = "thank-you.html";
 }
 
 renderQuestion();
