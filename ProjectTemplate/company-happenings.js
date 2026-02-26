@@ -1,21 +1,27 @@
+const likertChoices = [
+    "Agree",
+    "Neutral",
+    "Disagree"
+    ];
+
 const questions = [
     {
         id: 1,
-        text: "?",
-        choices: [
-        ]
+        text: "I enjoy the work I do on a day to day basis?",
+        choices: likertChoices 
+        
     },
     {
         id: 2,
-        text: "?",
-        choices: [
-        ]
+        text: "I can complete my work without excess delays?",
+        choices: likertChoices 
+        
     },
     {
         id: 3,
-        text: "?",
-        choices: [
-        ]
+        text: "I have the tools I need to perform effectively?",
+        choices: likertChoices 
+        
     }
 ];
 
