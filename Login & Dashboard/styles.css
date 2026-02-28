@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #D3D3D3;
+  background: #f4f8f8;
   margin: 0;
 }
 
@@ -12,19 +12,6 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.Login, .panel, .questions {
-  background: #035272;
-  color: #FF9B51;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.Login p, .panel p, .questions p,
-.Login label, .panel label, .questions label,
-.Login h2, .panel h2, .questions h2,
-.Login h3, .panel h3, .questions h3 {
-  color: white;
 }
 
 .Login input,
@@ -49,14 +36,12 @@ h1 {
 }
 
 button {
-  background-color: #FF9B51;
+  background-color: #4078c0;
   color: white;
   padding: 10px 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 8px;
-  font-weight: bold;
 }
 
 /* DashBoard Styles */
@@ -73,9 +58,11 @@ button {
   margin: 0 auto;
 }
 .panel, .questions {
+  background: white;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 textarea {
@@ -83,5 +70,35 @@ textarea {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 8px;
+}
+
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.choice {
+  display: block;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
